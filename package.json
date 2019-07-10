@@ -1,0 +1,51 @@
+{
+	"name": "vscode-bcrypt",
+	"displayName": "BCrypt",
+	"description": "",
+	"version": "0.0.1",
+	"publisher": "aabegg",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.bcrypt"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.bcrypt",
+				"title": "bcrypt"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production",
+		"compile": "webpack --mode none",
+		"watch": "webpack --mode none --watch",
+		"test-compile": "tsc -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/bcryptjs": "^2.4.2",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.14.12",
+		"@types/vscode": "^1.36.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"ts-loader": "^6.0.4",
+		"tslint": "^5.18.0",
+		"typescript": "^3.5.3",
+		"vscode-test": "^1.0.0-next.0",
+		"webpack": "^4.35.3",
+		"webpack-cli": "^3.3.5"
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3"
+	}
+}
