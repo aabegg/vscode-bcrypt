@@ -1,11 +1,14 @@
 {
-	"name": "vscode-bcyrpt",
-	"displayName": "Bcyrpt",
+	"name": "vscode-bcrypt",
+	"displayName": "Bcrypt",
 	"description": "",
-	"version": "0.0.4",
+	"version": "0.0.5",
+	"publisher": "aabegg",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
+	"icon": "media/icon.png",
+	"repository": "https://github.com/aabegg/vscode-bcrypt",
 	"categories": [
 		"Other"
 	],
@@ -22,11 +25,10 @@
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile",
-		"test": "node ./out/test/runTest.js"
+		"vscode:prepublish": "webpack --mode production",
+		"compile": "webpack --mode none",
+		"watch": "webpack --mode none --watch",
+		"test-compile": "tsc -p ./"
 	},
 	"devDependencies": {
 		"@types/bcryptjs": "^2.4.2",
